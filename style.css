@@ -1,0 +1,24 @@
+body {
+    background-color: #f0f8ff; /* Un color azul muy clarito */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #0056b3; /* Un texto azul más oscuro */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Botón verde */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
