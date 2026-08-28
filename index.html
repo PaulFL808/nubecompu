@@ -1,37 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head> 
-    <title>Cloud Computing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing - Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos para botones (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <img src="logo.jpg" alt="Logo Santo Tomás" class="logo">
-    <h1>Cloud Computing</h1>
-<h2>Mi primer sistema Cloud</h2>
-<p>Sistema creado en la asignatura Computación en la Nube del Instituto Profesional Santo Tomás</p>
-<button id="btn-ingresar">Ingresar al sistema</button>
+    
+    <div class="dashboard-container">
+        <!-- Encabezado con Logo -->
+        <header class="dashboard-header">
+            <img src="logo.jpg" alt="Logo Santo Tomás" class="logo">
+            <div class="header-titles">
+                <h1>Cloud Computing</h1>
+                <h2>Mi primer sistema Cloud</h2>
+                <p>Instituto Profesional Santo Tomás</p>
+            </div>
+        </header>
 
-    <!-- Modal del Formulario -->
-    <div id="modal-producto" class="modal" style="display: none;">
+        <!-- Controles y Botón Agregar -->
+        <div class="dashboard-controls">
+            <h3>Inventario de Productos</h3>
+            <button id="btn-ingresar" class="btn-primary"><i class="fas fa-plus"></i> Nuevo Producto</button>
+        </div>
+
+        <!-- Tabla Dashboard -->
+        <div class="table-container">
+            <table id="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-productos">
+                    <!-- Los productos aparecerán aquí dinámicamente -->
+                    <tr><td colspan="4" class="text-center">Cargando productos...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal del Formulario (Crear / Editar) -->
+    <div id="modal-producto" class="modal">
         <div class="modal-content">
+            <!-- La pequeña X en la esquina -->
             <span class="close-btn" id="btn-cerrar">&times;</span>
-            <h3>Ingresar Nuevo Producto</h3>
+            <h3 id="modal-titulo">Ingresar Nuevo Producto</h3>
+            
             <form id="form-producto">
-                <label for="nombre">Nombre del Producto:</label>
-                <input type="text" id="nombre" required>
+                <input type="hidden" id="producto-id">
                 
-                <label for="stock">Stock:</label>
-                <input type="number" id="stock" required>
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Papas Fritas">
+                </div>
                 
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" required></textarea>
+                <div class="form-group">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" required placeholder="Ej: 10">
+                </div>
                 
-                <button type="submit">Guardar Producto</button>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" required placeholder="Añade una descripción..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-success" id="btn-guardar"><i class="fas fa-save"></i> Guardar Producto</button>
             </form>
-            <p id="mensaje-exito" style="color: green; display: none;">¡Producto guardado con éxito!</p>
+            <p id="mensaje-exito" class="mensaje-exito">¡Operación exitosa!</p>
         </div>
     </div>
 
     <!-- Script de la aplicación -->
     <script type="module" src="app.js"></script>
-</body></html>
+</body>
+</html>

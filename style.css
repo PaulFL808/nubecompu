@@ -1,82 +1,225 @@
+/* Variables de colores para un diseño moderno y discreto */
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --primary-color: #0056b3;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --border-color: #e0e0e0;
+}
+
 body {
-    background-color: #f0f8ff; /* Un color azul muy clarito */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
 }
 
-h1 {
-    color: #0056b3; /* Un texto azul más oscuro */
+/* Contenedor Principal (Tarjeta Blanca) */
+.dashboard-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 30px;
+    box-sizing: border-box;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #28a745; /* Botón verde */
-    color: white;
-    border: none;
-    cursor: pointer;
+/* Header */
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 120px;
     height: auto;
+    margin-right: 20px;
+    /* Al estar sobre fondo blanco (--card-bg), ya no desentonará */
+}
+
+.header-titles h1 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.header-titles h2 {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.header-titles p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Controles */
+.dashboard-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.dashboard-controls h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Botones */
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover { background-color: #004494; }
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+    width: 100%;
+}
+.btn-success:hover { background-color: #218838; }
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 6px 10px;
+    margin-left: 5px;
+}
+.btn-danger:hover { background-color: #c82333; }
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 6px 10px;
+}
+.btn-edit:hover { background-color: #e0a800; }
+
+/* Tabla */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #fdfdfd;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* Modal Styles */
 .modal {
+    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
+    background-color: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: left;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-sizing: border-box;
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    color: #aaa;
+    color: #999;
+    transition: color 0.2s;
 }
 
 .close-btn:hover {
-    color: black;
+    color: var(--danger-color);
 }
 
-#form-producto label {
+/* Formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-main);
 }
 
-#form-producto input, #form-producto textarea {
+.form-group input, .form-group textarea {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border-color 0.3s;
 }
 
-#form-producto button {
-    width: 100%;
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.mensaje-exito {
+    color: var(--success-color);
+    display: none;
+    text-align: center;
     margin-top: 15px;
+    font-weight: bold;
 }
