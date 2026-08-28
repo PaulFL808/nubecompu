@@ -3,28 +3,48 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Computing - Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cloud Computing - Sistema</title>
+    <!-- Agregamos v=2 para evitar caché CSS -->
+    <link rel="stylesheet" href="style.css?v=2">
     <!-- Iconos para botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
-    <div class="dashboard-container">
-        <!-- Encabezado con Logo -->
-        <header class="dashboard-header">
-            <img src="logo.jpg" alt="Logo Santo Tomás" class="logo">
+    <!-- VISTA 1: INICIO (Landing) -->
+    <div class="dashboard-container" id="landing-view">
+        <header class="dashboard-header" style="flex-direction: column; text-align: center; border: none;">
+            <img src="logo.jpg" alt="Logo Santo Tomás" class="logo" style="margin: 0 auto 20px auto;">
             <div class="header-titles">
                 <h1>Cloud Computing</h1>
                 <h2>Mi primer sistema Cloud</h2>
                 <p>Instituto Profesional Santo Tomás</p>
             </div>
+            <br>
+            <button id="btn-ir-dashboard" class="btn-primary" style="font-size: 18px; padding: 15px 30px; margin-top: 20px;">
+                <i class="fas fa-chart-line"></i> Ingresar al Dashboard
+            </button>
+        </header>
+    </div>
+
+    <!-- VISTA 2: DASHBOARD (Inventario) -->
+    <div class="dashboard-container" id="dashboard-view" style="display: none;">
+        <!-- Encabezado con Logo Pequeño -->
+        <header class="dashboard-header">
+            <img src="logo.jpg" alt="Logo Santo Tomás" class="logo" style="max-width: 80px;">
+            <div class="header-titles">
+                <h1>Dashboard - Cloud Computing</h1>
+                <p>Gestión de Inventario</p>
+            </div>
+            <button id="btn-volver" class="btn-danger" style="margin-left: auto;">
+                <i class="fas fa-sign-out-alt"></i> Salir
+            </button>
         </header>
 
         <!-- Controles y Botón Agregar -->
         <div class="dashboard-controls">
             <h3>Inventario de Productos</h3>
-            <button id="btn-ingresar" class="btn-primary"><i class="fas fa-plus"></i> Nuevo Producto</button>
+            <button id="btn-ingresar" class="btn-success"><i class="fas fa-plus"></i> Nuevo Producto</button>
         </div>
 
         <!-- Tabla Dashboard -->
@@ -40,7 +60,7 @@
                 </thead>
                 <tbody id="lista-productos">
                     <!-- Los productos aparecerán aquí dinámicamente -->
-                    <tr><td colspan="4" class="text-center">Cargando productos...</td></tr>
+                    <tr><td colspan="4" class="text-center">Cargando productos... Si esto demora, verifica tu conexión a Firebase.</td></tr>
                 </tbody>
             </table>
         </div>
@@ -78,6 +98,6 @@
     </div>
 
     <!-- Script de la aplicación -->
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js?v=2"></script>
 </body>
 </html>

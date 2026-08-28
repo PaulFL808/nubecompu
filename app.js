@@ -16,6 +16,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Referencias del DOM
+const btnIrDashboard = document.getElementById("btn-ir-dashboard");
+const btnVolver = document.getElementById("btn-volver");
+const landingView = document.getElementById("landing-view");
+const dashboardView = document.getElementById("dashboard-view");
+
 const btnIngresar = document.getElementById("btn-ingresar");
 const modalProducto = document.getElementById("modal-producto");
 const btnCerrar = document.getElementById("btn-cerrar");
@@ -23,6 +28,17 @@ const formProducto = document.getElementById("form-producto");
 const mensajeExito = document.getElementById("mensaje-exito");
 const listaProductos = document.getElementById("lista-productos");
 const modalTitulo = document.getElementById("modal-titulo");
+
+// Navegación entre vistas
+btnIrDashboard.addEventListener("click", () => {
+    landingView.style.display = "none";
+    dashboardView.style.display = "block";
+});
+
+btnVolver.addEventListener("click", () => {
+    dashboardView.style.display = "none";
+    landingView.style.display = "block";
+});
 
 // Abrir el modal para CREAR
 btnIngresar.addEventListener("click", () => {
@@ -70,6 +86,9 @@ onSnapshot(collection(db, "productos"), (snapshot) => {
             </tr>
         `;
     });
+}, (error) => {
+    console.error("Error obteniendo datos: ", error);
+    listaProductos.innerHTML = `<tr><td colspan="4" class="text-center" style="color:red;">Error de conexión: Verifica que Firestore esté en "Modo de Prueba".</td></tr>`;
 });
 
 // CREAR o ACTUALIZAR (Create / Update)
