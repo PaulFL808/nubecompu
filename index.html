@@ -9,5 +9,29 @@
     <h1>Cloud Computing</h1>
 <h2>Mi primer sistema Cloud</h2>
 <p>Sistema creado en la asignatura Computación en la Nube del Instituto Profesional Santo Tomás</p>
-<button>Ingresar al sistema</button>
+<button id="btn-ingresar">Ingresar al sistema</button>
+
+    <!-- Modal del Formulario -->
+    <div id="modal-producto" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" id="btn-cerrar">&times;</span>
+            <h3>Ingresar Nuevo Producto</h3>
+            <form id="form-producto">
+                <label for="nombre">Nombre del Producto:</label>
+                <input type="text" id="nombre" required>
+                
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" required>
+                
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" required></textarea>
+                
+                <button type="submit">Guardar Producto</button>
+            </form>
+            <p id="mensaje-exito" style="color: green; display: none;">¡Producto guardado con éxito!</p>
+        </div>
+    </div>
+
+    <!-- Script de la aplicación -->
+    <script type="module" src="app.js"></script>
 </body></html>
