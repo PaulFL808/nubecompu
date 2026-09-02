@@ -4,7 +4,7 @@ Este repositorio contiene un sistema de inventario (CRUD) desarrollado para la a
 
 El proyecto demuestra la transición de una aplicación de almacenamiento local a un sistema completamente en la nube utilizando tecnologías Serverless.
 
-## 🚀 Versiones del Proyecto
+## Versiones del Proyecto
 
 El proyecto está dividido en dos versiones funcionales para demostrar la diferencia entre el almacenamiento local en el navegador y una base de datos en la nube real.
 
@@ -19,7 +19,7 @@ El proyecto está dividido en dos versiones funcionales para demostrar la difere
 * Utiliza el `localStorage` del navegador para guardar los datos en formato JSON.
 * Demuestra cómo era el sistema antes de implementar la conexión a Firebase.
 
-## 🛠️ Resumen del Proceso de Desarrollo
+## Resumen del Proceso de Desarrollo
 
 El desarrollo de este sistema siguió un flujo progresivo:
 
@@ -38,7 +38,7 @@ El desarrollo de este sistema siguió un flujo progresivo:
 4. **Despliegue Continuo (GitHub Pages):** 
    El código fuente se subió a este repositorio en GitHub, configurando la rama `gh-pages` para alojar la página web de manera gratuita y pública, vinculando el frontend directamente con Firebase sin necesidad de un servidor intermedio (Backend-as-a-Service).
 
-## 💻 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 * **Frontend:** HTML5, CSS3, JavaScript (ES6 Modules)
 * **Base de Datos:** Firebase Firestore (Cloud NoSQL)
