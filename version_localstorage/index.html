@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Computing - LocalStorage</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Iconos para botones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -20,83 +19,11 @@
                 <p>Instituto Profesional Santo Tomás</p>
             </div>
             <br>
-            <button id="btn-ir-dashboard" class="btn-primary" style="font-size: 18px; padding: 15px 30px; margin-top: 20px;">
+            <button onclick="window.location.href='dashboard.html'" class="btn-primary" style="font-size: 18px; padding: 15px 30px; margin-top: 20px;">
                 <i class="fas fa-chart-line"></i> Ingresar al Dashboard
             </button>
         </header>
     </div>
 
-    <!-- VISTA 2: DASHBOARD (Inventario) -->
-    <div class="dashboard-container" id="dashboard-view" style="display: none;">
-        <!-- Encabezado con Logo Pequeño -->
-        <header class="dashboard-header">
-            <img src="logo.jpg" alt="Logo Santo Tomás" class="logo" style="max-width: 80px;">
-            <div class="header-titles">
-                <h1>Dashboard - Cloud Computing</h1>
-                <p>Gestión de Inventario</p>
-            </div>
-            <button id="btn-volver" class="btn-danger" style="margin-left: auto;">
-                <i class="fas fa-sign-out-alt"></i> Salir
-            </button>
-        </header>
-
-        <!-- Controles y Botón Agregar -->
-        <div class="dashboard-controls">
-            <h3>Inventario de Productos</h3>
-            <button id="btn-ingresar" class="btn-success"><i class="fas fa-plus"></i> Nuevo Producto</button>
-        </div>
-
-        <!-- Tabla Dashboard -->
-        <div class="table-container">
-            <table id="tabla-productos">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Stock</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-productos">
-                    <!-- Los productos aparecerán aquí dinámicamente -->
-                    <tr><td colspan="4" class="text-center">Cargando productos... Si esto demora, verifica tu conexión a Firebase.</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Modal del Formulario (Crear / Editar) -->
-    <div id="modal-producto" class="modal">
-        <div class="modal-content">
-            <!-- La pequeña X en la esquina -->
-            <span class="close-btn" id="btn-cerrar">&times;</span>
-            <h3 id="modal-titulo">Ingresar Nuevo Producto</h3>
-            
-            <form id="form-producto">
-                <input type="hidden" id="producto-id">
-                
-                <div class="form-group">
-                    <label for="nombre">Nombre del Producto:</label>
-                    <input type="text" id="nombre" required placeholder="Ej: Papas Fritas">
-                </div>
-                
-                <div class="form-group">
-                    <label for="stock">Stock:</label>
-                    <input type="number" id="stock" required placeholder="Ej: 10">
-                </div>
-                
-                <div class="form-group">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" required placeholder="Añade una descripción..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn-success" id="btn-guardar"><i class="fas fa-save"></i> Guardar Producto</button>
-            </form>
-            <p id="mensaje-exito" class="mensaje-exito">¡Operación exitosa!</p>
-        </div>
-    </div>
-
-    <!-- Script de la aplicación sin type="module" para que funcione offline (doble clic) -->
-    <script src="app.js"></script>
 </body>
 </html>
